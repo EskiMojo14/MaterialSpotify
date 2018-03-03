@@ -1,0 +1,224 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v36/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+[class*="-16"]::before { font-size: 18px !important; }
+[class*="-24"]::before { font-size: 24px !important; }
+[class*="-32"]::before { font-size: 36px !important; }
+[class*="-48"]::before { font-size: 48px !important; }
+
+@mixin spoticon-material($name, $content, $extra: false) {
+  $selector: spoticon-#{$name};
+  [class*="spoticon-#{$name}"]::before {
+    @if $extra == true {
+      font-family: 'Material Icons Extra' !important;
+    } @else {
+      font-family: 'Material Icons' !important;
+    }
+    content: #{'"' + $content + '"'} !important;
+    font-feature-settings: 'liga';
+  }
+}
+
+@include spoticon-material(add-to-playlist, playlist_add);
+@include spoticon-material(add-to-queue, add_to_queue);
+@include spoticon-material(addfollow, person_add);
+@include spoticon-material(addfollowers, person_add);
+@include spoticon-material(addsuggestedsong, add_circle_outline);
+@include spoticon-material(airplay, airplay);
+@include spoticon-material(album, album);
+@include spoticon-material(album-contained, album);
+@include spoticon-material(arrow-down, arrow_downward);
+@include spoticon-material(arrow-left, arrow_back);
+@include spoticon-material(arrow-right, arrow_forward);
+@include spoticon-material(arrow-up, arrow_upward);
+
+@include spoticon-material(artist, artist, true);
+@include spoticon-material(artist-active, artist, true);
+
+@include spoticon-material(attach, attach_file);
+@include spoticon-material(available-offline, offline_pin);
+@include spoticon-material(ban, gavel);
+@include spoticon-material(ban-active, gavel);
+@include spoticon-material(block, block);
+@include spoticon-material(bluetooth, bluetooth);
+@include spoticon-material(browse, subscriptions);
+@include spoticon-material(browse-active, subscriptions);
+@include spoticon-material(camera, photo_camera);
+@include spoticon-material(carplay, directions_car);
+@include spoticon-material(chart-down, keyboard_arrow_down);
+@include spoticon-material(chart-left, keyboard_arrow_left);
+@include spoticon-material(chart-right, keyboard_arrow_right);
+@include spoticon-material(chart-down, arrow_drop_down);
+@include spoticon-material(chart-up, arrow_drop_up);
+@include spoticon-material(check, check);
+@include spoticon-material(check-alt, check_circle);
+@include spoticon-material(chevron-down, keyboard_arrow_down);
+@include spoticon-material(chevron-left, keyboard_arrow_left);
+@include spoticon-material(chevron-right, keyboard_arrow_right);
+@include spoticon-material(chevron-up, keyboard_arrow_up);
+@include spoticon-material(collaborative-playlist, queue_music);
+@include spoticon-material(collection, library_music);
+@include spoticon-material(collection-active, library_music);
+@include spoticon-material(connect-to-devices, devices);
+@include spoticon-material(copy, content_copy);
+@include spoticon-material(device-car, directions_car);
+@include spoticon-material(device-computer, computer);
+@include spoticon-material(device-mobile, smartphone);
+@include spoticon-material(device-multispeaker, speaker_group);
+@include spoticon-material(device-other, devices_other);
+@include spoticon-material(device-speaker, speaker);
+@include spoticon-material(device-tablet, tablet);
+@include spoticon-material(device-tv, tv);
+@include spoticon-material(devices, devices);
+@include spoticon-material(devices-alt, devices);
+@include spoticon-material(discover, album);
+@include spoticon-material(download, file_download);
+@include spoticon-material(downloaded, offline_pin);
+@include spoticon-material(drag-and-drop, drag_handle);
+@include spoticon-material(edit, edit);
+@include spoticon-material(email, email);
+@include spoticon-material(events, event);
+
+@include spoticon-material(facebook, facebook, true);
+@include spoticon-material(facebook-messenger, facebook_messenger, true);
+
+@include spoticon-material(filter, filter_list);
+@include spoticon-material(flag, flag);
+@include spoticon-material(follow, supervisor_account);
+@include spoticon-material(fullscreen, fullscreen);
+@include spoticon-material(game-console, videogame_asset);
+@include spoticon-material(gears, settings);
+
+@include spoticon-material(googleplus, google_plus, true);
+@include spoticon-material(grid-view, view_grid, true);
+
+@include spoticon-material(headphones, headset);
+@include spoticon-material(heart, favorite_outline);
+@include spoticon-material(heart-active, favorite);
+@include spoticon-material(helpcircle, help_outline);
+@include spoticon-material(highlight, highlight);
+@include spoticon-material(home, home);
+@include spoticon-material(home-active, home);
+@include spoticon-material(inbox, inbox);
+@include spoticon-material(info, info);
+@include spoticon-material(library, library_music);
+@include spoticon-material(lightning, flash_on);
+@include spoticon-material(list-view, view_list);
+@include spoticon-material(localfile, insert_drive_file);
+@include spoticon-material(locked, lock_outline);
+@include spoticon-material(locked-active, lock);
+@include spoticon-material(lyrics, short_text);
+@include spoticon-material(make-available-offline, file_download);
+@include spoticon-material(me-alt, person_add);
+@include spoticon-material(menu, menu);
+@include spoticon-material(messages, message);
+@include spoticon-material(mic, mic);
+
+@include spoticon-material(minimise, window_minimize, true);
+
+@include spoticon-material(mix, wb_sunny);
+@include spoticon-material(more, more_vert);
+@include spoticon-material(more-alt, more_vert);
+@include spoticon-material(more-android, more_vert);
+@include spoticon-material(new-spotify-connect, cast);
+@include spoticon-material(new-volume, volume_up);
+@include spoticon-material(newradio, radio);
+@include spoticon-material(notifications, notifications);
+@include spoticon-material(now-playing, equalizer);
+@include spoticon-material(now-playing-active, equalizer);
+@include spoticon-material(offline, cloud_off);
+@include spoticon-material(offline-sync, sync);
+@include spoticon-material(pause, pause);
+@include spoticon-material(payment, payment);
+@include spoticon-material(payment-history, history);
+@include spoticon-material(play, play_arrow);
+@include spoticon-material(playlist, playlist_play);
+@include spoticon-material(playlist-folder, folder);
+@include spoticon-material(plus, add);
+@include spoticon-material(plus-2px, add);
+@include spoticon-material(plus-alt, add_circle_outline);
+@include spoticon-material(podcasts, settings_input_antenna);
+@include spoticon-material(podcasts-active, settings_input_antenna);
+@include spoticon-material(public, public);
+@include spoticon-material(queue, queue_music);
+@include spoticon-material(queue-number, queue_music);
+@include spoticon-material(radio, radio);
+@include spoticon-material(radio-active, radio);
+
+@include spoticon-material(radioqueue, infinity, true);
+
+@include spoticon-material(redeem, local_activity);
+@include spoticon-material(refresh, refresh);
+@include spoticon-material(released, event_available);
+@include spoticon-material(released-alt, event_note);
+@include spoticon-material(repeat, repeat);
+@include spoticon-material(repeatonce, repeat_one);
+@include spoticon-material(report-abuse, report);
+@include spoticon-material(running, directions_run);
+@include spoticon-material(search, search);
+@include spoticon-material(search-active, search);
+@include spoticon-material(sendto, inbox);
+@include spoticon-material(share, share);
+@include spoticon-material(share-android, share);
+@include spoticon-material(sharetofollowers, people);
+@include spoticon-material(shows, live_tv);
+@include spoticon-material(shuffle, shuffle);
+@include spoticon-material(skip, block);
+@include spoticon-material(skip-active, block);
+@include spoticon-material(skip-back, skip_previous);
+@include spoticon-material(skip-forward, skip_next);
+
+// @include spoticon-material(skipback15, skip_back_15, true);
+// @include spoticon-material(skipforward15, skip_forward_15, true);
+
+@include spoticon-material(sleeptimer, sleep, true);
+
+@include spoticon-material(sms, textsms);
+@include spoticon-material(sort, sort);
+@include spoticon-material(sort-down, keyboard_arrow_downsort);
+@include spoticon-material(sort-up, keyboard_arrow_upsort);
+@include spoticon-material(sortdown, keyboard_arrow_downsort);
+@include spoticon-material(sortup, keyboard_arrow_upsort);
+@include spoticon-material(spotify-connect, cast);
+@include spoticon-material(spotify-connect-alt, cast);
+@include spoticon-material(spotify-onewave, volume_mute);
+@include spoticon-material(spotify-twowave, volume_down);
+
+@include spoticon-material(spotify, spotify, true);
+
+@include spoticon-material(spotifypremium, card_membership);
+@include spoticon-material(star, star);
+@include spoticon-material(star-alt, star);
+@include spoticon-material(subtitles, subtitles);
+@include spoticon-material(tag, local_offer);
+@include spoticon-material(thumbs-down, thumb_down);
+@include spoticon-material(thumbs-up, thumb_up);
+@include spoticon-material(time, access_time);
+@include spoticon-material(topcountry, flag);
+@include spoticon-material(track, audiotrack);
+@include spoticon-material(trending, trending_up);
+@include spoticon-material(trending-active, trending_up);
+
+@include spoticon-material(tumblr, tumblr, true);
+@include spoticon-material(twitter, twitter, true);
+
+@include spoticon-material(user, person_outline);
+@include spoticon-material(user-active, person);
+@include spoticon-material(user-alt, person_outline);
+@include spoticon-material(user-active-alt, person);
+@include spoticon-material(user-circle, account_circle);
+@include spoticon-material(video, personal_video);
+@include spoticon-material(volume, volume_up);
+@include spoticon-material(volume-off, volume_off);
+@include spoticon-material(volume-onewave, volume_mute);
+@include spoticon-material(volume-twowave, volume_down);
+@include spoticon-material(warning, warning);
+@include spoticon-material(watch, watch);
+
+@include spoticon-material(whatsapp, whatsapp, true);
+
+@include spoticon-material(x, close);
