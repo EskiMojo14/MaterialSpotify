@@ -4,25 +4,6 @@
   font-weight: 400;
   src: url(https://fonts.gstatic.com/s/materialicons/v36/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2"); }
 
-html {
-  font-family: Roboto, sans-serif !important; }
-
-.card {
-  background-color: white !important;
-  border-radius: 4px !important;
-  overflow: hidden !important; }
-
-.card-image, .card-placeholder-wrapper, .card-image-content-wrapper {
-  border-top-left-radius: 4px !important;
-  border-top-right-radius: 4px !important;
-  overflow: hidden !important; }
-
-.card-info-title {
-  color: rgba(0, 0, 0, 0.87) !important; }
-
-.card-info-subtitle-links, .card-info-subtitle-metadata, .card-info-subtitle-description {
-  color: rgba(0, 0, 0, 0.54) !important; }
-
 [class*="-16"]::before {
   font-size: 18px !important; }
 
@@ -34,6 +15,9 @@ html {
 
 [class*="-48"]::before {
   font-size: 48px !important; }
+
+[class*="-64"]::before {
+  font-size: 64px !important; }
 
 [class*="spoticon-add-to-playlist"]::before {
   font-family: 'Material Icons' !important;
@@ -93,6 +77,16 @@ html {
 [class*="spoticon-arrow-up"]::before {
   font-family: 'Material Icons' !important;
   content: "arrow_upward" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-artist"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "artist" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-artist-active"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "artist" !important;
   font-feature-settings: 'liga'; }
 
 [class*="spoticon-attach"]::before {
@@ -310,6 +304,16 @@ html {
   content: "event" !important;
   font-feature-settings: 'liga'; }
 
+[class*="spoticon-facebook"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "facebook" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-facebook-messenger"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "facebook_messenger" !important;
+  font-feature-settings: 'liga'; }
+
 [class*="spoticon-filter"]::before {
   font-family: 'Material Icons' !important;
   content: "filter_list" !important;
@@ -338,6 +342,16 @@ html {
 [class*="spoticon-gears"]::before {
   font-family: 'Material Icons' !important;
   content: "settings" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-googleplus"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "google_plus" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-grid-view"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "view_grid" !important;
   font-feature-settings: 'liga'; }
 
 [class*="spoticon-headphones"]::before {
@@ -443,6 +457,11 @@ html {
 [class*="spoticon-mic"]::before {
   font-family: 'Material Icons' !important;
   content: "mic" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-minimise"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "window_minimize" !important;
   font-feature-settings: 'liga'; }
 
 [class*="spoticon-mix"]::before {
@@ -585,6 +604,16 @@ html {
   content: "radio" !important;
   font-feature-settings: 'liga'; }
 
+[class*="spoticon-radioqueue"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "infinity" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-redeem"]::before {
+  font-family: 'Material Icons' !important;
+  content: "local_activity" !important;
+  font-feature-settings: 'liga'; }
+
 [class*="spoticon-refresh"]::before {
   font-family: 'Material Icons' !important;
   content: "refresh" !important;
@@ -680,6 +709,21 @@ html {
   content: "skip_next" !important;
   font-feature-settings: 'liga'; }
 
+[class*="spoticon-skipback15"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "back_15" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-skipforward15"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "forward_15" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-sleeptimer"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "sleep" !important;
+  font-feature-settings: 'liga'; }
+
 [class*="spoticon-sms"]::before {
   font-family: 'Material Icons' !important;
   content: "textsms" !important;
@@ -730,6 +774,11 @@ html {
   content: "volume_down" !important;
   font-feature-settings: 'liga'; }
 
+[class*="spoticon-spotify"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "spotify" !important;
+  font-feature-settings: 'liga'; }
+
 [class*="spoticon-spotifypremium"]::before {
   font-family: 'Material Icons' !important;
   content: "card_membership" !important;
@@ -748,6 +797,11 @@ html {
 [class*="spoticon-subtitles"]::before {
   font-family: 'Material Icons' !important;
   content: "subtitles" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-tag"]::before {
+  font-family: 'Material Icons' !important;
+  content: "local_offer" !important;
   font-feature-settings: 'liga'; }
 
 [class*="spoticon-thumbs-down"]::before {
@@ -783,6 +837,16 @@ html {
 [class*="spoticon-trending-active"]::before {
   font-family: 'Material Icons' !important;
   content: "trending_up" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-tumblr"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "tumblr" !important;
+  font-feature-settings: 'liga'; }
+
+[class*="spoticon-twitter"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "twitter" !important;
   font-feature-settings: 'liga'; }
 
 [class*="spoticon-user"]::before {
@@ -845,7 +909,61 @@ html {
   content: "watch" !important;
   font-feature-settings: 'liga'; }
 
+[class*="spoticon-whatsapp"]::before {
+  font-family: 'Spotify-Material-Icons' !important;
+  content: "whatsapp" !important;
+  font-feature-settings: 'liga'; }
+
 [class*="spoticon-x"]::before {
   font-family: 'Material Icons' !important;
   content: "close" !important;
   font-feature-settings: 'liga'; }
+
+/**
+ * The css property used for elevation. In most cases this should not be changed. It is exposed
+ * as a variable for abstraction / easy use when needing to reference the property directly, for
+ * example in a `will-change` rule.
+ */
+/**
+ * The default duration value for elevation transitions.
+ */
+/**
+ * The default easing value for elevation transitions.
+ */
+/**
+ * Applies the correct CSS rules to an element to give it the elevation specified by $z-value.
+ * The $z-value must be between 0 and 24.
+ * If $color has an alpha channel, it will be ignored and overridden. To increase the opacity of the shadow, use
+ * $opacity-boost.
+ */
+/**
+ * Returns a string that can be used as the value for a `transition` property for elevation.
+ * Calling this function directly is useful in situations where a component needs to transition
+ * more than one property.
+ *
+ * ```scss
+ * .foo {
+ *   transition: mdc-elevation-transition-value(), opacity 100ms ease;
+ *   will-change: $mdc-elevation-property, opacity;
+ * }
+ * ```
+ */
+html {
+  font-family: Roboto, sans-serif !important; }
+
+.card {
+  background-color: white !important;
+  border-radius: 4px !important;
+  overflow: hidden !important;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); }
+
+.card-image, .card-placeholder-wrapper, .card-image-content-wrapper {
+  border-top-left-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+  overflow: hidden !important; }
+
+.card-info-title {
+  color: rgba(0, 0, 0, 0.87) !important; }
+
+.card-info-subtitle-links, .card-info-subtitle-metadata, .card-info-subtitle-description {
+  color: rgba(0, 0, 0, 0.54) !important; }

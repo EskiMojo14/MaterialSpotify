@@ -5,16 +5,21 @@
   src: url(https://fonts.gstatic.com/s/materialicons/v36/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
 }
 
-[class*="-16"]::before { font-size: 18px !important; }
-[class*="-24"]::before { font-size: 24px !important; }
-[class*="-32"]::before { font-size: 36px !important; }
-[class*="-48"]::before { font-size: 48px !important; }
+$old-sizes: 16, 24, 32, 48, 64;
+
+$new-sizes: 18, 24, 36, 48, 64;
+// from http://google.github.io/material-design-icons/#sizing
+
+@each $old-size in $old-sizes {
+  $i: index($old-sizes, $old-size); 
+  [class*="-#{$old-size}"]::before { font-size: #{nth($new-sizes, $i)}px !important; }
+}
 
 @mixin spoticon-material($name, $content, $extra: false) {
   $selector: spoticon-#{$name};
   [class*="spoticon-#{$name}"]::before {
     @if $extra == true {
-      font-family: 'Material Icons Extra' !important;
+      font-family: 'Spotify-Material-Icons' !important;
     } @else {
       font-family: 'Material Icons' !important;
     }
@@ -172,8 +177,8 @@
 @include spoticon-material(skip-back, skip_previous);
 @include spoticon-material(skip-forward, skip_next);
 
-// @include spoticon-material(skipback15, skip_back_15, true);
-// @include spoticon-material(skipforward15, skip_forward_15, true);
+@include spoticon-material(skipback15, back_15, true);
+@include spoticon-material(skipforward15, forward_15, true);
 
 @include spoticon-material(sleeptimer, sleep, true);
 
