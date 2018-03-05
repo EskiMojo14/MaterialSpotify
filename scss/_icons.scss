@@ -1,0 +1,220 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v36/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+$old-sizes: 16, 24, 32, 48, 64;
+
+$new-sizes: 24, 24, 36, 48, 64;
+// from http://google.github.io/material-design-icons/#sizing
+
+[class*="spoticon-"] { 
+  border-radius: 0 !important;
+  &::before {
+    font-family: 'Material Icons' !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+@mixin spoticon-material($name, $content, $extra: false) {
+  $selector: spoticon-#{$name};
+  [class*="spoticon-#{$name}"]::before {
+    @if $extra == true {
+      font-family: 'Spotify-Material-Icons' !important;
+    }
+    content: #{'"' + $content + '"'} !important;
+  }
+  @each $old-size in $old-sizes {
+    $i: index($old-sizes, $old-size); 
+    .spoticon-#{$name}-#{$old-size} {
+      width: #{nth($new-sizes, $i)}px !important;
+      height: #{nth($new-sizes, $i)}px !important;
+      &::before { 
+        font-size: #{nth($new-sizes, $i)}px !important; 
+        line-height: #{nth($new-sizes, $i)}px !important; 
+      }
+    }
+  }
+}
+
+@include spoticon-material(add-to-playlist, \E03B);
+@include spoticon-material(add-to-queue, \E05C);
+@include spoticon-material(addfollow, \E7FE);
+@include spoticon-material(addfollowers, \E7FE);
+@include spoticon-material(addsuggestedsong, \E148);
+@include spoticon-material(airplay, \E055);
+@include spoticon-material(album, \E019);
+@include spoticon-material(album-contained, \E019);
+@include spoticon-material(arrow-down, \E5DB);
+@include spoticon-material(arrow-left, \E5C4);
+@include spoticon-material(arrow-right, \E5C8);
+@include spoticon-material(arrow-up, \E5D8);
+  @include spoticon-material(artist, \E900, true);
+  @include spoticon-material(artist-active, \900, true);
+@include spoticon-material(attach, \E226);
+@include spoticon-material(available-offline, \E90A);
+@include spoticon-material(ban, \E14B);
+@include spoticon-material(ban-active, \E14B);
+@include spoticon-material(block, \E14B);
+@include spoticon-material(bluetooth, \E147);
+@include spoticon-material(browse, \E064);
+@include spoticon-material(browse-active, \E064);
+@include spoticon-material(camera, \E412);
+@include spoticon-material(carplay, \E531);
+@include spoticon-material(chart-down, \E5C5);
+@include spoticon-material(chart-up, \E5C7);
+@include spoticon-material(chart-new, \E031);
+@include spoticon-material(check, \E5CA);
+@include spoticon-material(check-alt, \E86C);
+@include spoticon-material(chevron-down, \E313);
+@include spoticon-material(chevron-left, \E314);
+@include spoticon-material(chevron-right, \E315);
+@include spoticon-material(chevron-up, \E316);
+@include spoticon-material(collaborative-playlist, \E03D);
+@include spoticon-material(collection, \E030);
+@include spoticon-material(collection-active, \E030);
+@include spoticon-material(connect-to-devices, \E1B1);
+@include spoticon-material(copy, \E14D);
+@include spoticon-material(device-car, \E531);
+@include spoticon-material(device-computer, \E30A);
+@include spoticon-material(device-mobile, \E32C);
+@include spoticon-material(device-multispeaker, \E32E);
+@include spoticon-material(device-other, \E337);
+@include spoticon-material(device-speaker, \E32D);
+@include spoticon-material(device-tablet, \E32F);
+@include spoticon-material(device-tv, \E333);
+@include spoticon-material(devices, \E1B1);
+@include spoticon-material(devices-alt, \E1B1);
+@include spoticon-material(discover, \E019);
+@include spoticon-material(download, \E2C4);
+@include spoticon-material(downloaded, \E90A);
+@include spoticon-material(drag-and-drop, \E25D);
+@include spoticon-material(edit, \E3C9);
+@include spoticon-material(email, \E0BE);
+@include spoticon-material(events, \E878);
+  @include spoticon-material(facebook, \E901, true);
+  @include spoticon-material(facebook-messenger, \E902, true);
+@include spoticon-material(filter, \E152);
+@include spoticon-material(flag, \E153);
+@include spoticon-material(follow, \E8D3);
+@include spoticon-material(fullscreen, \E5D0);
+@include spoticon-material(game-console, \E338);
+@include spoticon-material(gears, \E8B8);
+  @include spoticon-material(googleplus, \E903, true);
+  @include spoticon-material(grid-view, \E909, true);
+@include spoticon-material(headphones, \E310);
+@include spoticon-material(heart, \E87E);
+@include spoticon-material(heart-active, \E87D);
+@include spoticon-material(helpcircle, \E8FD);
+@include spoticon-material(highlight, \E25F);
+@include spoticon-material(home, \E88A);
+@include spoticon-material(home-active, \E88A);
+@include spoticon-material(inbox, \E156);
+@include spoticon-material(info, \E88E);
+@include spoticon-material(library, \E030);
+@include spoticon-material(lightning, \E3E7);
+@include spoticon-material(list-view, \E8EF);
+@include spoticon-material(localfile, \E24D);
+@include spoticon-material(locked, \E899);
+@include spoticon-material(locked-active, \E897);
+@include spoticon-material(lyrics, \E261);
+@include spoticon-material(make-available-offline, \E2C4);
+@include spoticon-material(me-alt, \E7FD);
+@include spoticon-material(menu, \E5D2);
+@include spoticon-material(messages, \E0C9);
+@include spoticon-material(mic, \E029);
+@include spoticon-material(minimise, \E5D1);
+@include spoticon-material(mix, \E430);
+@include spoticon-material(more, \E5D4);
+@include spoticon-material(more-alt, \E5D4);
+@include spoticon-material(more-android, \E5D4);
+@include spoticon-material(new-spotify-connect, \E307);
+@include spoticon-material(new-volume, \E050);
+@include spoticon-material(newradio, \E03E);
+@include spoticon-material(notifications, \E7F4);
+@include spoticon-material(now-playing, \E01D);
+@include spoticon-material(now-playing-active, \E01D);
+@include spoticon-material(offline, \E2C1);
+@include spoticon-material(offline-sync, \E627);
+@include spoticon-material(pause, \E034);
+@include spoticon-material(payment, \E8A1);
+@include spoticon-material(payment-history, \E889);
+@include spoticon-material(play, \E037);
+@include spoticon-material(playlist, \E05F);
+@include spoticon-material(playlist-folder, \E2C7);
+@include spoticon-material(plus, \E145);
+@include spoticon-material(plus-2px, \E145);
+@include spoticon-material(plus-alt, \E148);
+@include spoticon-material(podcasts, \E88F);
+@include spoticon-material(podcasts-active, \E88F);
+@include spoticon-material(public, \E80B);
+@include spoticon-material(queue, \E03D);
+@include spoticon-material(queue-number, \E03D);
+@include spoticon-material(radio, \E03E);
+@include spoticon-material(radio-active, \E03E);
+  @include spoticon-material(radioqueue, \E904, true);
+@include spoticon-material(redeem, \E35F);
+@include spoticon-material(refresh, \E5D5);
+@include spoticon-material(released, \E614);
+@include spoticon-material(released-alt, \E616);
+@include spoticon-material(repeat, \E040);
+@include spoticon-material(repeatonce, \E041);
+@include spoticon-material(report-abuse, \E160);
+@include spoticon-material(running, \E566);
+@include spoticon-material(search, \E8B6);
+@include spoticon-material(search-active, \E8B6);
+@include spoticon-material(sendto, \E156);
+@include spoticon-material(share, \E80D);
+@include spoticon-material(share-android, \E80D);
+@include spoticon-material(sharetofollowers, \E7FB);
+@include spoticon-material(shows, \E639);
+@include spoticon-material(shuffle, \E043);
+@include spoticon-material(skip, \E14B);
+@include spoticon-material(skip-active, \E14B);
+@include spoticon-material(skip-back, \E045);
+@include spoticon-material(skip-forward, \E044);
+  @include spoticon-material(skipback15, \E90C, true);
+  @include spoticon-material(skipforward15, \E90D, true);
+  @include spoticon-material(sleeptimer, \E905, true);
+@include spoticon-material(sms, \E0D8);
+@include spoticon-material(sort, \E164);
+@include spoticon-material(sort-down, \E313\E164);
+@include spoticon-material(sort-up, \E316\E164);
+@include spoticon-material(sortdown, \E313\E164);
+@include spoticon-material(sortup, \E316\E164);
+@include spoticon-material(spotify-connect, \E307);
+@include spoticon-material(spotify-connect-alt, \E307);
+@include spoticon-material(spotify-onewave, \E04E);
+@include spoticon-material(spotify-twowave, \E04D);
+  @include spoticon-material(spotify, \E906, true);
+@include spoticon-material(spotifypremium, \E8F7);
+@include spoticon-material(star, \E838);
+@include spoticon-material(star-alt, \E838);
+@include spoticon-material(subtitles, \E048);
+@include spoticon-material(tag, \E54E);
+@include spoticon-material(thumbs-down, \E8DB);
+@include spoticon-material(thumbs-up, \E8DC);
+@include spoticon-material(time, \E192);
+@include spoticon-material(topcountry, \E153);
+@include spoticon-material(track, \E341);
+@include spoticon-material(trending, \E8E5);
+@include spoticon-material(trending-active, \E8E5);
+  @include spoticon-material(tumblr, \E907, true);
+  @include spoticon-material(twitter, \E908, true);
+@include spoticon-material(user, \E7FF);
+@include spoticon-material(user-active, \E7FD);
+@include spoticon-material(user-alt, \E7FF);
+@include spoticon-material(user-active-alt, \E7FD);
+@include spoticon-material(user-circle, \E853);
+@include spoticon-material(video, \E63A);
+@include spoticon-material(volume, \E050);
+@include spoticon-material(volume-off, \E04F);
+@include spoticon-material(volume-onewave, \E04E);
+@include spoticon-material(volume-twowave, \E04D);
+@include spoticon-material(warning, \E002);
+@include spoticon-material(watch, \E334);
+  @include spoticon-material(whatsapp, \E90A, true);
+@include spoticon-material(x, \E5CD);

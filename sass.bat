@@ -1,1 +1,1 @@
-node-sass --include-path node_modules user.scss user.css
+node-sass --include-path node_modules scss/user.scss user.css

@@ -1,0 +1,279 @@
+@import "@material/theme/color-palette";
+
+$mdc-typography-font-family: Roboto, sans-serif;
+
+$mdc-theme-primary: #1db954;
+$mdc-theme-secondary: #1ed760;
+
+//light theme
+// $mdc-theme-background: white;
+// $body-background: $material-color-grey-500;
+// $app-bar-color: $material-color-grey-100;
+
+//dark theme
+$mdc-theme-background: $material-color-grey-800;
+$body-background: #303030;
+$app-bar-color: $material-color-grey-900;
+
+@import "@material/theme/mdc-theme";
+@import "@material/animation/functions";
+@import "@material/elevation/mixins";
+@import "@material/list/variables";
+@import "@material/ripple/mixins";
+
+@import "./colors";
+
+html, body {
+  font-family: $mdc-typography-font-family !important;
+  font-weight: 400 !important;
+  @include mdc-theme-prop(color, text-primary-on-background);
+}
+
+body {
+  background-color: $body-background !important;
+  font-size: 16px !important;
+}
+
+.card {
+  @include mdc-theme-prop(background-color, background, true);
+	border-radius: 4px !important;
+	overflow: hidden !important;
+  @include mdc-elevation(2);
+  transition-property: transform, opacity, box-shadow;
+  transition-duration: 33ms, 33ms, $mdc-elevation-transition-duration;
+  transition-timing-function: cubic-bezier(0.3, 0, 0.7, 1), cubic-bezier(0.3, 0, 0.7, 1), $mdc-elevation-transition-timing-function;
+  &:hover {
+    @include mdc-elevation(8);
+  }
+  &.pressed {
+    @include mdc-elevation(8);
+    transform: scale(1);
+  }
+  &.genre-card {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    .gc-label-container {
+      height: 48px;
+      background-color: rgba(0,0,0,0.7);
+      padding: 0 !important;
+      text-align: left;
+      top: auto !important;
+      .gc-label-text-wrapper {
+        padding: 16px;
+        .gc-label-text {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  &-image, &-placeholder-wrapper, &-image-content-wrapper {
+    border-top-left-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+    overflow: hidden !important;
+  }
+  &-info {
+    &-title, &-title a {
+      @include mdc-theme-prop(color, text-primary-on-background, true);
+      font-size: 20px !important;
+      line-height: 32px !important;
+      font-weight: 500;
+      letter-spacing: .02em !important;
+      margin: -8px 0 16px -.05em !important;
+    }
+    &-subtitle-links, &-subtitle-metadata, &-subtitle-description {
+      @include mdc-theme-prop(color, text-secondary-on-background, true);
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 400;
+      letter-spacing: .08em;
+    }
+    &-wrapper {
+      padding: 16px !important;
+      margin-top: 0 !important;
+      height: auto !important;
+    }
+  }
+  &-puff {
+    &__card-image {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+    &__title {
+      @include mdc-theme-prop(color, text-primary-on-dark, true);
+      font-size: 20px !important;
+      line-height: 32px !important;
+      font-weight: 500;
+      letter-spacing: .02em !important;
+      margin: 0 !important;
+      padding: 8px 16px;
+      &-container {
+        background-color: rgba(0,0,0,0.7);
+        top: auto;
+        justify-content: flex-start;
+      }
+    }
+    &__info-container {
+      padding: 16px;
+      text-align: left;
+      .card-puff__subtitle {
+        @include mdc-theme-prop(color, text-secondary-on-background, true);
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 400;
+        letter-spacing: .08em;
+      }
+    }
+  }
+}
+
+.sidebar {
+  @include mdc-theme-prop(background-color, background);
+  border-right: 1px solid $divider-color;
+  &-top-items {
+    border-bottom: 1px solid $divider-color;
+  }
+  .sidebar-navbar.sidebar-scroll-element {
+    background-color: transparent;
+    overflow-y: auto;
+    h2 {
+      margin: 0 16px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      text-transform: none;
+      @include mdc-theme-prop(color, text-secondary-on-background);
+    }
+    ul:not(:last-of-type) {
+      padding-bottom: 8px;
+      border-bottom: 1px solid $divider-color;
+      margin-bottom: 0;
+    }
+    .item {
+      height: 40px;
+      a, div {
+        padding: 0 16px;
+        height: 40px;
+        line-height: 40px;
+        .title {
+          @include mdc-theme-prop(color, text-primary-on-background);
+          font-weight: 400 !important;
+          font-size: 14px !important;
+        }
+      }
+      .menu-accessory {
+        display: flex !important;
+        @include mdc-theme-prop(color, text-icon-on-background);
+        margin-right: 32px;
+      }
+      &.active {
+        position: relative;
+        &:before {
+          content: "";
+          @include mdc-theme-prop(background-color, secondary);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0.075;
+        }
+        &:after {
+          display: none;
+        }
+        .title {
+          @include mdc-theme-prop(color, secondary);
+        }
+        .menu-accessory {
+          @include mdc-theme-prop(color, secondary);
+        }
+      }
+    }
+  }
+  .NewPlaylistButton {
+    border-top: 1px solid $divider-color;
+    height: 36px;
+    line-height: 36px;
+    @include mdc-ripple-surface;
+    @include mdc-ripple-radius-bounded;
+    @include mdc-states(text-primary-on-background);
+    overflow: hidden;
+    &__icon {
+      display: none;
+    }
+    &__text {
+      text-transform: uppercase;
+      font-weight: 500;
+      text-align: center;
+    }
+  }
+}
+
+.view-player {
+  height: auto !important;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  background-color: transparent !important;
+  border: none !important;
+  @include mdc-elevation(8);
+  // spotify connect bar > snackbar
+  .remote-playback-bar {
+    max-width: 568px;
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: auto;
+    display: block !important;
+    height: 48px !important;
+    line-height: 48px !important;
+    border-radius: 4px;
+    z-index: -1 !important;
+    padding: 0 24px;
+    transition: mdc-animation-enter(top, .25s);
+    @include mdc-theme-prop(color, primary);
+    &.visible {
+      top: -8px;
+      &:hover {
+        top: -48px;
+      }
+    }
+    .arrow {
+      display: none;
+    }
+    p {
+      font-size: 14px;
+      padding: 0;
+      @include mdc-theme-prop(color, text-primary-on-primary);
+      .spoticon {
+        display: none;
+      }
+    }
+  }
+  .player-bar-wrapper {
+    width: 100%;
+    @include mdc-theme-prop(background-color, background);
+    padding: 8px 0;
+    .text-container .text-item-container .text-item .scroll-text-container {
+      &:before {
+        background: linear-gradient(270deg,transparent,mdc-theme-prop-value(background));
+      }
+      &:after {
+        background: linear-gradient(90deg,transparent,mdc-theme-prop-value(background));
+      }
+    }
+  }
+}
+
+.app-header {
+  @include app-bar-theme-prop(background-color, app-bar);
+  @include mdc-elevation(4);
+  .glue-page-header__background {
+    &-color, &-overlay, &-scroll-overlay {
+      display: none;
+    }
+  }
+}
+
+@import "./icons";

@@ -1,0 +1,81 @@
+
+$app-bar-theme-property-values: (
+  app-bar: $app-bar-color,
+  // Text-primary on "app-bar" background
+  text-primary-on-app-bar: app-bar-theme-ink-color-for-fill_(primary, $app-bar-color),
+  text-secondary-on-app-bar: app-bar-theme-ink-color-for-fill_(secondary, $app-bar-color),
+  text-hint-on-app-bar: app-bar-theme-ink-color-for-fill_(hint, $app-bar-color),
+  text-disabled-on-app-bar: app-bar-theme-ink-color-for-fill_(disabled, $app-bar-color),
+  text-icon-on-app-bar: app-bar-theme-ink-color-for-fill_(icon, $app-bar-color)
+);
+
+// Applies the correct theme color style to the specified property.
+// $property is typically color or background-color, but can be any CSS property that accepts color values.
+// $style should be one of the map keys in $app-bar-theme-property-values (_variables.scss), or a literal color value.
+// $edgeOptOut controls whether to feature-detect around Edge to avoid emitting CSS variables for it,
+// intended for use in cases where interactions with pseudo-element styles cause problems due to Edge bugs.
+@mixin app-bar-theme-prop($property, $style, $important: false, $edgeOptOut: false) {
+  @if type-of($style) == "color" or $style == "currentColor" {
+    @if $important {
+      #{$property}: $style !important;
+    } @else {
+      #{$property}: $style;
+    }
+  } @else {
+    @if not map-has-key($app-bar-theme-property-values, $style) {
+      @error "Invalid style: '#{$style}'. Choose one of: #{map-keys($app-bar-theme-property-values)}";
+    }
+
+    $value: map-get($app-bar-theme-property-values, $style);
+
+    @if $important {
+      /* @alternate */
+      #{$property}: $value !important;
+
+      @if $edgeOptOut {
+        // stylelint-disable max-nesting-depth
+        @at-root {
+          @supports not (-ms-ime-align:auto) {
+            // stylelint-disable scss/selector-no-redundant-nesting-selector
+            & {
+              #{$property}: var(--app-bar-theme-#{$style}, $value) !important;
+            }
+            // stylelint-enable scss/selector-no-redundant-nesting-selector
+          }
+        }
+        // stylelint-enable max-nesting-depth
+      } @else {
+        #{$property}: var(--app-bar-theme-#{$style}, $value) !important;
+      }
+    } @else {
+      /* @alternate */
+      #{$property}: $value;
+
+      @if $edgeOptOut {
+        // stylelint-disable max-nesting-depth
+        @at-root {
+          @supports not (-ms-ime-align:auto) {
+            // stylelint-disable scss/selector-no-redundant-nesting-selector
+            & {
+              #{$property}: var(--app-bar-theme-#{$style}, $value);
+            }
+            // stylelint-enable scss/selector-no-redundant-nesting-selector
+          }
+        }
+        // stylelint-enable max-nesting-depth
+      } @else {
+        #{$property}: var(--app-bar-theme-#{$style}, $value);
+      }
+    }
+  }
+}
+
+:root {
+  @each $style in map-keys($app-bar-theme-property-values) {
+    --app-bar-theme-#{$style}: #{map-get($app-bar-theme-property-values, $style)};
+  }
+}
+
+@import "@material/list/variables";
+
+$divider-color: if(mdc-theme-tone(mdc-theme-prop-value(background)) == "dark", $mdc-list-divider-color-on-dark-bg, $mdc-list-divider-color-on-light-bg);
