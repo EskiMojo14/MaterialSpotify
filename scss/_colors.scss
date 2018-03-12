@@ -2,11 +2,11 @@
 $app-bar-theme-property-values: (
   app-bar: $app-bar-color,
   // Text-primary on "app-bar" background
-  text-primary-on-app-bar: app-bar-theme-ink-color-for-fill_(primary, $app-bar-color),
-  text-secondary-on-app-bar: app-bar-theme-ink-color-for-fill_(secondary, $app-bar-color),
-  text-hint-on-app-bar: app-bar-theme-ink-color-for-fill_(hint, $app-bar-color),
-  text-disabled-on-app-bar: app-bar-theme-ink-color-for-fill_(disabled, $app-bar-color),
-  text-icon-on-app-bar: app-bar-theme-ink-color-for-fill_(icon, $app-bar-color)
+  text-primary-on-app-bar: mdc-theme-ink-color-for-fill_(primary, $app-bar-color),
+  text-secondary-on-app-bar: mdc-theme-ink-color-for-fill_(secondary, $app-bar-color),
+  text-hint-on-app-bar: mdc-theme-ink-color-for-fill_(hint, $app-bar-color),
+  text-disabled-on-app-bar: mdc-theme-ink-color-for-fill_(disabled, $app-bar-color),
+  text-icon-on-app-bar: mdc-theme-ink-color-for-fill_(icon, $app-bar-color)
 );
 
 // Applies the correct theme color style to the specified property.
